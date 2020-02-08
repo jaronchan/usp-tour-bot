@@ -1,11 +1,14 @@
-from flask import Flask, request
-
+import os
 import telegram
-from telebot.credentials import BOT_TOKEN, WEBHOOK_URL
+
+from flask import Flask, request
+from telebot.credentials import WEBHOOK_URL
 from telebot.mastermind import get_response
 
 global bot
 global TOKEN
+
+TOKEN = os.getenv("TOKEN")
 
 bot = telegram.Bot(token=BOT_TOKEN)
 
